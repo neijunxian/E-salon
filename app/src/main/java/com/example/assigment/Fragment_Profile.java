@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import entities.Account;
 import utlis.PreferenceUtils;
 
 /**
@@ -19,8 +20,7 @@ import utlis.PreferenceUtils;
  *
  * create an instance of this fragment.
  */
-public class Fragment_Profile extends Fragment {
-
+public class Fragment_Profile extends Fragment implements View.OnClickListener{
     public Fragment_Profile() {
         // Required empty public constructor
     }
@@ -30,6 +30,8 @@ public class Fragment_Profile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        ImageButton btnMyProfile = (ImageButton) view.findViewById(R.id.btnMyProfile);
+        btnMyProfile.setOnClickListener(this);
         final ImageButton logOut = (ImageButton) view.findViewById(R.id.btnLogOut);
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,5 +50,15 @@ public class Fragment_Profile extends Fragment {
         Intent intent = new Intent(getActivity(),MainActivity.class);
         startActivity(intent);
         getActivity().finish();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btnMyProfile:
+                Intent intent = new Intent(getActivity(),EditProfile.class);
+                startActivity(intent);
+                break;
+        }
     }
 }
