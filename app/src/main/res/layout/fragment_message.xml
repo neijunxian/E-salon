@@ -1,48 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
     tools:context=".Fragment_message">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="398dp"
-        android:layout_height="670dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="-5dp"
-        android:layout_marginBottom="22dp"
-
-        />
-    'line 9 -21 change card view'
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="73dp"
-        android:layout_height="76dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="242dp"
-        android:src="@drawable/robot" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="163dp"
-        android:layout_marginEnd="145dp"
-        android:src="@drawable/message_box" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -67,72 +30,113 @@
         android:src="@drawable/gray_line" />
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="40dp"
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="62dp"
-        android:src="@drawable/conversation" />
+        android:background="#F23B5F"
+        android:src="@drawable/msgpage_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="389dp"
+        android:layout_height="667dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:src="@drawable/rect_chatbox"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="55dp"
+        android:layout_height="53dp"
+        android:src="@drawable/conversation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="69dp" />
 
     <TextView
-        android:id="@+id/textView10"
-        android:layout_width="123dp"
-        android:layout_height="36dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="103dp"
-        android:layout_marginTop="59dp"
-        android:text="ChatBox"
-        android:textSize="30sp" />
+        android:id="@+id/textView12"
+        android:layout_width="120dp"
+        android:layout_height="55dp"
+        android:background="@drawable/chatbot"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="67dp" />
 
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="288dp"
-        android:layout_height="42dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="78dp"
-        android:layout_marginBottom="47dp"
-        android:background="@drawable/rec18"
-        android:backgroundTint="#EFCACA"
-        android:ems="10"
-        android:hint="Type a message"
-        android:inputType="textPassword"
-        android:paddingRight="130dp"
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="77dp"
-        android:layout_height="69dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="37dp"
-        android:backgroundTint="#FFFFFF"
-        android:src="@drawable/pink_circle" />
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/juz_a_normalline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="132dp" />
 
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="342dp"
-        android:layout_marginBottom="55dp"
-        android:src="@android:drawable/ic_menu_send" />
+        android:src="@drawable/juz_a_normalline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="637dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="72dp"
+        android:layout_height="66dp"
+        android:src="@drawable/robot"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="245dp" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="183dp"
+        android:layout_height="120dp"
+        android:src="@drawable/in_chatbox"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="158dp" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="228dp"
-        android:text="Chee hua  Second FUKED LIFE IS IN THIS APP "
-        android:textColor="@color/design_default_color_primary"
-        android:textSize="24sp" />
+        android:id="@+id/textView13"
+        android:layout_width="290dp"
+        android:layout_height="69dp"
+        android:background="@drawable/type_a_msg_box"
+        android:hint="Type a message..."
+        android:paddingLeft="25dp"
+        android:paddingTop="10dp"
+        android:textSize="26sp"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="637dp" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/pink_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="323dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="30dp"
+        android:layout_height="29dp"
+        android:background="@drawable/right_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="657dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
