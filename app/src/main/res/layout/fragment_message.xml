@@ -130,9 +130,8 @@
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="JUNXIAN FUKED LIFE IS IN THIS APP
-"
+        android:layout_height="228dp"
+        android:text="JUNXIAN Second FUKED LIFE IS IN THIS APP "
         android:textColor="@color/design_default_color_primary"
         android:textSize="24sp" />
 
