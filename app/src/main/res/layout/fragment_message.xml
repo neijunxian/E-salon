@@ -127,4 +127,13 @@
         android:layout_marginBottom="55dp"
         android:src="@android:drawable/ic_menu_send" />
 
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JUNXIAN FUKED LIFE IS IN THIS APP
+"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="24sp" />
+
 </FrameLayout>
