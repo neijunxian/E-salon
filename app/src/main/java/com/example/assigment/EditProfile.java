@@ -22,11 +22,9 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
+        setContentView(R.layout.activity_edit_profile);
         editTextPhone=findViewById(R.id.editTextPhone);
         loadData();
-        setContentView(R.layout.activity_edit_profile);
         Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.gender,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -36,8 +34,6 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
     }
 
     public void loadData(){
-        //Intent intent = getIntent();
-        //account=(Account) intent.getSerializableExtra("account");
         editTextName=findViewById(R.id.FullName);
         editTextEmail=findViewById(R.id.Email);
         AccountDB accountDB = new AccountDB(getApplicationContext());
