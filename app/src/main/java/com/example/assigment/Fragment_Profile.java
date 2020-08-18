@@ -13,13 +13,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 
-
 /**
  * A simple {@link Fragment} subclass.
- *
+ * <p>
  * create an instance of this fragment.
  */
-public class Fragment_Profile extends Fragment implements View.OnClickListener{
+public class Fragment_Profile extends Fragment implements View.OnClickListener {
     public Fragment_Profile() {
         // Required empty public constructor
     }
@@ -42,25 +41,27 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener{
         });
         return view;
     }
-    public void onAttach(Context context){
+
+    public void onAttach(Context context) {
         super.onAttach(context);
     }
-    public void logOut_Onclick(View view){
 
-        Intent intent = new Intent(getActivity(),MainActivity.class);
+    public void logOut_Onclick(View view) {
+
+        Intent intent = new Intent(getActivity(), MainActivity.class);
         startActivity(intent);
         getActivity().finish();
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btnMyProfile:
-                Intent intent = new Intent(getActivity(),EditProfile.class);
+                Intent intent = new Intent(getActivity(), EditProfile.class);
                 startActivity(intent);
                 break;
             case R.id.btnChangePasswordPage:
-                Intent intent1 = new Intent(getActivity(),ChangePassword.class);
+                Intent intent1 = new Intent(getActivity(), ChangePassword.class);
                 startActivity(intent1);
                 break;
         }

@@ -12,15 +12,16 @@ import android.widget.EditText;
 
 
 public class ChangePassword extends AppCompatActivity {
-    private EditText editTextOldPassword,editTextNewPassword,editTextConfPassword;
+    private EditText editTextOldPassword, editTextNewPassword, editTextConfPassword;
     private Button btnSave;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
-        editTextNewPassword=findViewById(R.id.NewTextPassword);
-        editTextConfPassword=findViewById(R.id.confirmPassword);
-        btnSave=findViewById(R.id.btnSave);
+        editTextNewPassword = findViewById(R.id.NewTextPassword);
+        editTextConfPassword = findViewById(R.id.confirmPassword);
+        btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,8 +119,8 @@ public class ChangePassword extends AppCompatActivity {
         }*/
     }
 
-    public void loadData(){
-        editTextOldPassword=findViewById(R.id.oldTextPassword);
+    public void loadData() {
+        editTextOldPassword = findViewById(R.id.oldTextPassword);
 
     }
 }

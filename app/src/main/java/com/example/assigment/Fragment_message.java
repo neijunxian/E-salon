@@ -10,17 +10,15 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
-
+ * <p>
  * create an instance of this fragment.
  */
 public class Fragment_message extends Fragment {
 
 
-
     public Fragment_message() {
         // Required empty public constructor
     }
-
 
 
     @Override

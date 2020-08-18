@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
 
         editTextUserName = findViewById(R.id.editTextUserName);
         editTextPassword = findViewById(R.id.editTextPassword);
-        auth=FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
         buttonLogin = findViewById(R.id.loginButton);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
     public void register(View view) {
         Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(intent);
@@ -76,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
             builder.show();
         } else {
             auth.signInWithEmailAndPassword(email, password)//here
-                    .addOnCompleteListener(this,new OnCompleteListener<AuthResult>() {
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {

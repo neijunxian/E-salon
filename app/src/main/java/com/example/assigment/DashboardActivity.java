@@ -15,7 +15,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class DashboardActivity extends AppCompatActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +42,7 @@ public class DashboardActivity extends AppCompatActivity {
                             break;
 
                         case R.id.action_Mailbox:
-                            selectedFragment= new Fragment_message();
+                            selectedFragment = new Fragment_message();
                             break;
 
                         case R.id.action_deal:

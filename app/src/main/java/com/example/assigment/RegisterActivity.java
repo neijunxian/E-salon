@@ -88,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 });
                 builder.show();
-            } else if (str_cpass.length() < 6 || str_pass.length()<6) {
+            } else if (str_cpass.length() < 6 || str_pass.length() < 6) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                 builder.setTitle(R.string.error);
                 builder.setMessage(R.string.password_length);
