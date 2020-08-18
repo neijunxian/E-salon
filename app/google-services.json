@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "721884851629",
+    "firebase_url": "https://e-salon-44390.firebaseio.com",
+    "project_id": "e-salon-44390",
+    "storage_bucket": "e-salon-44390.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721884851629:android:7043d8feef4da0c73d8524",
+        "android_client_info": {
+          "package_name": "com.example.assigment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721884851629-4s5qp4rg19otc8225pi4ud7kfv2157la.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6BhuNfWOLdcX6Me6ARvEIomUenYKGhjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721884851629-4s5qp4rg19otc8225pi4ud7kfv2157la.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

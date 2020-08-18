@@ -12,8 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import entities.Account;
-import utlis.PreferenceUtils;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,7 +30,9 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         ImageButton btnMyProfile = (ImageButton) view.findViewById(R.id.btnMyProfile);
+        ImageButton btnChangePasswordPage = (ImageButton) view.findViewById(R.id.btnChangePasswordPage);
         btnMyProfile.setOnClickListener(this);
+        btnChangePasswordPage.setOnClickListener(this);
         final ImageButton logOut = (ImageButton) view.findViewById(R.id.btnLogOut);
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +46,7 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener{
         super.onAttach(context);
     }
     public void logOut_Onclick(View view){
-        PreferenceUtils.saveUserName(null,getContext());
-        PreferenceUtils.savePassword(null,getContext());
+
         Intent intent = new Intent(getActivity(),MainActivity.class);
         startActivity(intent);
         getActivity().finish();
@@ -58,6 +58,10 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener{
             case R.id.btnMyProfile:
                 Intent intent = new Intent(getActivity(),EditProfile.class);
                 startActivity(intent);
+                break;
+            case R.id.btnChangePasswordPage:
+                Intent intent1 = new Intent(getActivity(),ChangePassword.class);
+                startActivity(intent1);
                 break;
         }
     }
