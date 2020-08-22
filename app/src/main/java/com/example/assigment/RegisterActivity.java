@@ -116,7 +116,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    private void register(final String username, final String fullName, String email, String password) {
+    private void register(final String username, final String fullName, final String email, final String password) {
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -131,6 +131,9 @@ public class RegisterActivity extends AppCompatActivity {
                             hashMap.put("id", userid);
                             hashMap.put("username", username);
                             hashMap.put("fullname", fullName);
+                            hashMap.put("email",email);
+                            hashMap.put("password",password);
+                            hashMap.put("phone","");
                             hashMap.put("gender", "");
                             hashMap.put("birth", "");
                             hashMap.put("imageURL", "default");

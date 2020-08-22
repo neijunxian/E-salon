@@ -5,16 +5,22 @@ public class User {
     private String username;
     private String fullname;
     private String gender;
-    private String brith;
+    private String birth;
     private String imageURL;
+    private String phone;
+    private String email;
+    private String password;
 
-    public User(String id, String username, String fullname, String gender, String brith, String imageURL) {
+    public User(String id, String username, String fullname, String gender, String birth, String imageURL, String phone, String email, String password) {
         this.id = id;
         this.username = username;
         this.fullname = fullname;
         this.gender = gender;
-        this.brith = brith;
+        this.birth = birth;
         this.imageURL = imageURL;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
     }
 
     public User() {
@@ -52,12 +58,12 @@ public class User {
         this.gender = gender;
     }
 
-    public String getBrith() {
-        return brith;
+    public String getBirth() {
+        return birth;
     }
 
-    public void setBrith(String brith) {
-        this.brith = brith;
+    public void setBirth(String birth) {
+        this.birth = birth;
     }
 
     public String getImageURL() {
@@ -66,5 +72,29 @@ public class User {
 
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

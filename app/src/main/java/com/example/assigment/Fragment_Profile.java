@@ -1,11 +1,13 @@
 package com.example.assigment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +36,7 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener {
 
     TextView username;
     ImageView profile_image;
+    private Activity mActivity;
     DatabaseReference reference;
     FirebaseUser firebaseUser;
 
@@ -47,7 +50,7 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         username = view.findViewById(R.id.username);
-        profile_image = view.findViewById(R.id.profile_image);
+        profile_image = view.findViewById(R.id.imageProfile);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
@@ -55,13 +58,18 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User user = snapshot.getValue(User.class);
-                username.setText(user.getUsername());
-                if (user.getImageURL().equals("default")) {
-                    profile_image.setImageResource(R.mipmap.ic_launcher);
+                if (mActivity == null) {
+                    return;
                 } else {
-                    Glide.with(Fragment_Profile.this).load(user.getImageURL()).into(profile_image);
+                    User user = snapshot.getValue(User.class);
+                    username.setText(user.getUsername());
+                    if (user.getImageURL().equals("default")) {
+                        profile_image.setImageResource(R.mipmap.ic_launcher);
+                    } else {
+                        Glide.with(getContext()).load(user.getImageURL()).into(profile_image);
+                    }
                 }
+
             }
 
             @Override
@@ -71,8 +79,10 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener {
         });
         ImageButton btnMyProfile = (ImageButton) view.findViewById(R.id.btnMyProfile);
         ImageButton btnChangePasswordPage = (ImageButton) view.findViewById(R.id.btnChangePasswordPage);
+        ImageButton btnHelpCenter = (ImageButton) view.findViewById(R.id.btnHelpCenter);
         btnMyProfile.setOnClickListener(this);
         btnChangePasswordPage.setOnClickListener(this);
+        btnHelpCenter.setOnClickListener(this);
         final ImageButton logOut = (ImageButton) view.findViewById(R.id.btnLogOut);
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,11 +95,9 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener {
 
     public void onAttach(Context context) {
         super.onAttach(context);
+        mActivity = getActivity();
     }
 
-    private void userInfo() {
-
-    }
 
     public void logOut_Onclick(View view) {
         FirebaseAuth.getInstance().signOut();
@@ -109,6 +117,12 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener {
                 Intent intent1 = new Intent(getActivity(), ChangePassword.class);
                 startActivity(intent1);
                 break;
+            case R.id.btnHelpCenter:
+                Fragment_HelpCenter fragment_helpCenter = new Fragment_HelpCenter();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.mainLayout,fragment_helpCenter).commit();
+                break;
+
         }
     }
 }

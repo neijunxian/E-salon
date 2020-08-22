@@ -46,7 +46,7 @@ public class DashboardActivity extends AppCompatActivity {
                             break;
 
                         case R.id.action_deal:
-
+                            selectedFragment= new Fragment_HelpCenter();
                             break;
 
                         case R.id.action_Profile:

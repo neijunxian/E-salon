@@ -53,4 +53,27 @@
         android:name="com.example.assigment.EditProfile"
         android:label="activity_edit_profile"
         tools:layout="@layout/activity_edit_profile" />
+    <fragment
+        android:id="@+id/fragment_message"
+        android:name="com.example.assigment.Fragment_message"
+        android:label="fragment_message"
+        tools:layout="@layout/fragment_message" >
+        <action
+            android:id="@+id/action_fragment_message_to_btm_nav"
+            app:destination="@id/btm_nav" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_HelpCenter"
+        android:name="com.example.assigment.Fragment_HelpCenter"
+        android:label="fragment_helpcenter"
+        tools:layout="@layout/fragment_helpcenter" >
+        <action
+            android:id="@+id/action_fragment_HelpCenter_to_btm_nav"
+            app:destination="@id/btm_nav" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_ListOfService"
+        android:name="com.example.assigment.Fragment_ListOfService"
+        android:label="fragment_listofservice"
+        tools:layout="@layout/fragment_listofservice" />
 </navigation>
