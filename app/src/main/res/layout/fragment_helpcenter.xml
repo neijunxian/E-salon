@@ -11,9 +11,9 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_light"
+        android:background="@color/red"
+        app:titleTextColor="@color/white"
         app:title="Help Center">
-
     </androidx.appcompat.widget.Toolbar>
 
     <TextView

@@ -8,8 +8,6 @@
     tools:context=".Fragment_dashboard">
 
 
-
-
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="359dp"
@@ -264,8 +262,6 @@
         app:layout_constraintEnd_toEndOf="@+id/Coloring"
         app:layout_constraintStart_toStartOf="@+id/Coloring"
         app:layout_constraintTop_toTopOf="@+id/Coloring" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

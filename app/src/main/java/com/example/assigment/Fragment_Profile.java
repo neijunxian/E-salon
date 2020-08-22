@@ -120,7 +120,7 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener {
             case R.id.btnHelpCenter:
                 Fragment_HelpCenter fragment_helpCenter = new Fragment_HelpCenter();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.mainLayout,fragment_helpCenter).commit();
+                transaction.replace(R.id.fragment_layout,fragment_helpCenter).addToBackStack(null).commit();
                 break;
 
         }

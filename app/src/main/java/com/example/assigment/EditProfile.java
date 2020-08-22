@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -20,6 +22,7 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -41,16 +44,18 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.Calendar;
 import java.util.HashMap;
 
 
-public class EditProfile extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class EditProfile extends AppCompatActivity implements AdapterView.OnItemSelectedListener, DatePickerDialog.OnDateSetListener {
 
-    private EditText editTextName, editTextEmail, editTextPhone, editTextBitrh;
+    private EditText editTextName, editTextEmail, editTextPhone;
+    private TextView editTextBitrh;
     private ImageButton gallery, backBtn;
     private ImageView profile_image;
     private Spinner spinner;
-    private RadioButton buttonMale,buttonFemale;
+    private RadioButton buttonMale, buttonFemale;
     private static final int IMAGE_REQUEST = 1;
     private Uri imageUri;
     private StorageTask uploadTask;
@@ -64,14 +69,40 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
         gallery = findViewById(R.id.openGallery);
+        editTextBitrh = findViewById(R.id.birth);
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
         loadData();
+
         gallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openImage();
             }
         });
+
+        editTextBitrh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDailog();
+            }
+        });
+    }
+
+    private void showDatePickerDailog() {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                this,
+                this,
+                Calendar.getInstance().get(Calendar.YEAR),
+                Calendar.getInstance().get(Calendar.MONTH),
+                Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
+        );
+        datePickerDialog.show();
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        String date = dayOfMonth + "/" + month + "/" + year ;
+        editTextBitrh.setText(date);
     }
 
     private void openImage() {
@@ -166,8 +197,8 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
         editTextPhone = findViewById(R.id.editTextPhone);
         editTextBitrh = findViewById(R.id.birth);
         profile_image = findViewById(R.id.profile_image);
-        buttonMale=findViewById(R.id.radioButtonMale);
-        buttonFemale=findViewById(R.id.radioButtonFemale);
+        buttonMale = findViewById(R.id.radioButtonMale);
+        buttonFemale = findViewById(R.id.radioButtonFemale);
         fuser = FirebaseAuth.getInstance().getCurrentUser();
         final String[] editGender = new String[1];
         reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
@@ -180,10 +211,11 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
                 editTextEmail.setText(user.getEmail());
                 editTextPhone.setText(user.getPhone());
                 editTextBitrh.setText(user.getBirth());
-                editGender[0] =(user.getGender());
-                if(editGender[0].equals("Male")){
+                editTextBitrh.setText(user.getBirth());
+                editGender[0] = (user.getGender());
+                if (editGender[0].equals("Male")) {
                     buttonMale.setChecked(true);
-                }else{
+                } else {
                     buttonFemale.setChecked(true);
                 }
 
@@ -200,4 +232,6 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
             }
         });
     }
+
+
 }
