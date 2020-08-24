@@ -114,15 +114,17 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
     }
 
     public void buttonSave_Click(View v) {
+        String str_email = editTextEmail.getText().toString();
+        String str_fullname = editTextName.getText().toString();
+        String str_phone = editTextPhone.getText().toString();
+        String str_birth = editTextBitrh.getText().toString();
+        int radioId = radioGroup.getCheckedRadioButtonId();
+        TextView radio;
+        radio = findViewById(radioId);
+        String str_gender = radio.getText().toString();
+        changeEmail(str_email, passowrd);
         try {
-            String str_email = editTextEmail.getText().toString();
-            String str_fullname = editTextName.getText().toString();
-            String str_phone = editTextPhone.getText().toString();
-            String str_birth = editTextBitrh.getText().toString();
-            int radioId = radioGroup.getCheckedRadioButtonId();
-            TextView radio;
-            radio = findViewById(radioId);
-            String str_gender = radio.getText().toString();
+
             if (TextUtils.isEmpty(str_fullname) || TextUtils.isEmpty(str_email)) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
                 builder.setTitle(R.string.error);
@@ -135,7 +137,7 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
                 });
                 builder.show();
             } else {
-                changeEmail(str_email, passowrd);
+
                 save(str_fullname, str_email, str_phone, str_gender, str_birth);
             }
         } catch (Exception e) {
@@ -160,7 +162,7 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    FirebaseUser user =FirebaseAuth.getInstance().getCurrentUser();
                     user.updateEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
