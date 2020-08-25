@@ -55,7 +55,7 @@
         tools:layout="@layout/activity_edit_profile" />
     <fragment
         android:id="@+id/fragment_message"
-        android:name="com.example.assigment.Fragment_message"
+        android:name="com.example.assigment.Fragment_message123"
         android:label="fragment_message"
         tools:layout="@layout/fragment_message" >
         <action

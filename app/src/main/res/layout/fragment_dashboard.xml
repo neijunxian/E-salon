@@ -16,13 +16,13 @@
         android:ems="10"
         android:hint="Type here to search"
         android:inputType="textPersonName"
-        android:paddingRight="185dp"
+        android:paddingLeft="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.01" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -39,7 +39,7 @@
         app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.091" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -52,10 +52,10 @@
         android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintHorizontal_bias="0.872"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.091" />
 
     <ImageButton
         android:id="@+id/Coloring"
@@ -67,7 +67,7 @@
         app:layout_constraintHorizontal_bias="0.859"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.237"
+        app:layout_constraintVertical_bias="0.208"
         app:srcCompat="@drawable/coloring" />
 
     <ImageButton
@@ -79,7 +79,7 @@
         app:layout_constraintHorizontal_bias="0.859"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456"
+        app:layout_constraintVertical_bias="0.416"
         app:srcCompat="@drawable/styling" />
 
     <ImageButton
@@ -91,7 +91,7 @@
         app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456"
+        app:layout_constraintVertical_bias="0.416"
         app:srcCompat="@drawable/hairdryer" />
 
     <ImageButton
@@ -103,7 +103,7 @@
         app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.695"
+        app:layout_constraintVertical_bias="0.637"
         app:srcCompat="@drawable/spa" />
 
     <ImageButton
@@ -115,7 +115,7 @@
         app:layout_constraintHorizontal_bias="0.859"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.695"
+        app:layout_constraintVertical_bias="0.637"
         app:srcCompat="@drawable/shampoo" />
 
     <ImageButton
@@ -127,7 +127,7 @@
         app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928"
+        app:layout_constraintVertical_bias="0.859"
         app:srcCompat="@drawable/shawing" />
 
     <ImageButton
@@ -139,7 +139,7 @@
         app:layout_constraintHorizontal_bias="0.859"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928"
+        app:layout_constraintVertical_bias="0.859"
         app:srcCompat="@drawable/black_btn" />
 
     <ImageButton
@@ -152,7 +152,7 @@
         app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.237"
+        app:layout_constraintVertical_bias="0.208"
         app:srcCompat="@drawable/haircut" />
 
     <Button

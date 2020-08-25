@@ -66,7 +66,7 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener {
                     if (user.getImageURL().equals("default")) {
                         profile_image.setImageResource(R.mipmap.ic_launcher);
                     } else {
-                        Glide.with(getContext()).load(user.getImageURL()).into(profile_image);
+                        Glide.with(getActivity().getApplicationContext()).load(user.getImageURL()).into(profile_image);
                     }
                 }
 
