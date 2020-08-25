@@ -122,28 +122,11 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
         TextView radio;
         radio = findViewById(radioId);
         String str_gender = radio.getText().toString();
-        changeEmail(str_email, passowrd);
-        try {
 
-            if (TextUtils.isEmpty(str_fullname) || TextUtils.isEmpty(str_email)) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-                builder.setTitle(R.string.error);
-                builder.setMessage(R.string.empty_fields);
-                builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
-                builder.show();
-            } else {
-
-                save(str_fullname, str_email, str_phone, str_gender, str_birth);
-            }
-        } catch (Exception e) {
+        if (TextUtils.isEmpty(str_fullname) || TextUtils.isEmpty(str_email)) {
             AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
             builder.setTitle(R.string.error);
-            builder.setMessage(e.getMessage());
+            builder.setMessage(R.string.empty_fields);
             builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -151,10 +134,15 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
                 }
             });
             builder.show();
+        } else {
+            save(str_fullname, str_email, str_phone, str_gender, str_birth, passowrd);
         }
     }
 
-    public void changeEmail(final String email, String passowrd) {
+    public void save(final String name, final String email, final String phone, final String gender, final String birth, String passowrd) {
+        final ProgressDialog pd = new ProgressDialog(this);
+        pd.setMessage("Uploading");
+        pd.show();
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         AuthCredential credential = EmailAuthProvider
                 .getCredential(firebaseUser.getEmail(), passowrd);
@@ -162,28 +150,26 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    FirebaseUser user =FirebaseAuth.getInstance().getCurrentUser();
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     user.updateEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            Toast.makeText(EditProfile.this, "successful Updated Email", Toast.LENGTH_LONG).show();
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
+                            HashMap<String, Object> hashMap = new HashMap<>();
+                            hashMap.put("fullname", name);
+                            hashMap.put("email", email);
+                            hashMap.put("phone", phone);
+                            hashMap.put("gender", gender);
+                            hashMap.put("birth", birth);
+                            reference.updateChildren(hashMap);
+                            pd.dismiss();
+                            Toast.makeText(EditProfile.this, "successful Updated", Toast.LENGTH_LONG).show();
                         }
                     });
                 }
             }
         });
-    }
 
-    public void save(final String name, final String email, final String phone, final String gender, final String birth) {
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
-        HashMap<String, Object> hashMap = new HashMap<>();
-        hashMap.put("fullname", name);
-        hashMap.put("email", email);
-        hashMap.put("phone", phone);
-        hashMap.put("gender", gender);
-        hashMap.put("birth", birth);
-        reference.updateChildren(hashMap);
-        Toast.makeText(EditProfile.this, "successful Updated", Toast.LENGTH_LONG).show();
     }
 
     private void showDatePickerDailog() {
@@ -199,7 +185,10 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        String date = dayOfMonth + "/" + month + "/" + year;
+        String month_string = Integer.toString(month + 1);
+        String day_string = Integer.toString(dayOfMonth);
+        String year_string = Integer.toString(year);
+        String date = day_string + "/" + month_string + "/" + year_string;
         editTextBitrh.setText(date);
     }
 
