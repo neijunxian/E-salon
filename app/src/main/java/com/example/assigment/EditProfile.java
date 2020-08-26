@@ -312,5 +312,4 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
         });
     }
 
-
 }
