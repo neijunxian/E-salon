@@ -30,7 +30,7 @@
         android:searchIcon="@drawable/loupe" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp"
@@ -57,218 +57,226 @@
             android:adjustViewBounds="true"
             android:alpha=".66"
             android:scaleType="fitXY"
-            android:src="@drawable/haircut" />
+            android:background="@drawable/haircut" />
 
 
     </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="320dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginRight="10dp"
-        app:cardCornerRadius="22dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp">
 
-        <TextView
-
-            android:layout_width="300dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:text="Chief Director Haircut"
-            android:textSize="20sp"
-            android:textStyle="bold">
+            android:orientation="vertical">
 
-        </TextView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="320dp"
+                android:layout_height="75dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="22dp">
 
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="10dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:text="45 minutes"
-            android:textSize="20sp"
-            android:textStyle="bold">
+                <TextView
 
-        </TextView>
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:text="Chief Director Haircut"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
 
-    </androidx.cardview.widget.CardView>
+                </TextView>
 
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:text="45 minutes"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="320dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="340dp"
-        android:layout_marginRight="10dp"
-        app:cardCornerRadius="22dp">
+                </TextView>
 
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:text="Senior Creative Director Haircut"
-            android:textSize="20sp"
-            android:textStyle="bold">
-
-        </TextView>
-
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="10dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:text="45 minutes"
-            android:textSize="20sp"
-            android:textStyle="bold">
-
-        </TextView>
+            </androidx.cardview.widget.CardView>
 
 
-    </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="320dp"
+                android:layout_height="75dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="22dp">
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:text="Senior Creative Director Haircut"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:text="45 minutes"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
+
+                </TextView>
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="320dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="420dp"
-        android:layout_marginRight="10dp"
-        app:cardCornerRadius="22dp">
-
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:text="Creative Director Haircut"
-            android:textSize="20sp"
-            android:textStyle="bold">
-
-        </TextView>
+            </androidx.cardview.widget.CardView>
 
 
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="10dp"
+            <androidx.cardview.widget.CardView
+                android:layout_width="320dp"
+                android:layout_height="75dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="22dp">
 
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:text="45 minutes"
-            android:textSize="20sp"
-            android:textStyle="bold">
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:text="Creative Director Haircut"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
 
-        </TextView>
-
-    </androidx.cardview.widget.CardView>
-
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="320dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="500dp"
-        android:layout_marginRight="10dp"
-        app:cardCornerRadius="22dp"
-
-        >
-
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:text="Professional Design Haircut"
-            android:textSize="20sp"
-            android:textStyle="bold">
-
-        </TextView>
-
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="10dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:text="45 minutes"
-            android:textSize="20sp"
-            android:textStyle="bold">
-
-        </TextView>
-
-    </androidx.cardview.widget.CardView>
+                </TextView>
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="320dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="580dp"
-        android:layout_marginRight="10dp"
-        app:cardCornerRadius="22dp">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="10dp"
 
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:text="Senior Design Haircut"
-            android:textSize="20sp"
-            android:textStyle="bold">
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:text="45 minutes"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
 
-        </TextView>
+                </TextView>
 
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="10dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:text="45 minutes"
-            android:textSize="20sp"
-            android:textStyle="bold">
-
-        </TextView>
+            </androidx.cardview.widget.CardView>
 
 
-    </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="320dp"
+                android:layout_height="75dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="22dp"
+
+                >
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:text="Professional Design Haircut"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:text="45 minutes"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="320dp"
+                android:layout_height="75dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="580dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="22dp">
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:text="Senior Design Haircut"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:text="45 minutes"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
 
     <TextView
         android:id="@+id/textView"

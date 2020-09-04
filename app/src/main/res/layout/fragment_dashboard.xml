@@ -143,7 +143,7 @@
         app:srcCompat="@drawable/black_btn" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/haircut"
         android:layout_width="155.5dp"
         android:layout_height="103.5dp"
         android:scaleType="centerCrop"

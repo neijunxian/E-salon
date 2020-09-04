@@ -7,7 +7,6 @@
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_alignparentEnd="true"
         android:layout_alignParentRight="true">
 
         <com.google.android.material.imageview.ShapeableImageView
