@@ -279,7 +279,7 @@
     </ScrollView>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/result"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginLeft="40dp"

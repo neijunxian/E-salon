@@ -76,4 +76,9 @@
         android:name="com.example.assigment.Fragment_ListOfService"
         android:label="fragment_listofservice"
         tools:layout="@layout/fragment_listofservice" />
+    <activity
+        android:id="@+id/serviceDetail"
+        android:name="com.example.assigment.ServiceDetail"
+        android:label="activity_service"
+        tools:layout="@layout/activity_service" />
 </navigation>
