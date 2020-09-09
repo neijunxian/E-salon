@@ -27,4 +27,10 @@
     <string name="priceDyeing">RM150.00</string>
     <string name="dyeingMale">\n*Price will be increased with darker colors. \n\n*Additional 10% of chemical hair services charged to sensitive scalp.\n\n*Additional 10% of Hair bleaching for the darker colours.  </string>
     <string name="dyeingFemale">\n*Price will be increased with darker colors. \n\n*Additional 10% of chemical hair services charged to sensitive scalp.\n\n*Additional 10% of Hair bleaching for the darker colours.\n\n*Additional charges for extra-long hair length  </string>
+
+    <string name="textAbout">E- Salon provides many high quality services including \nhaircut, coloring and much more. Not only will you\n leave feeling truly pampered, we will also give the knowledge to care for your hair and the best ways to maintain your look at home. Let us be the answer to \nall of your hair question!</string>
+    <string name="email"><b>Mail us</b>\n e-salon@gmail.com</string>
+    <string name="call"><b>Call Us</b>\n 012-345456789</string>
+    <string name="location">E-salon,Jln XXX,\n58000 Kuala Lumpur</string>
+
 </resources>

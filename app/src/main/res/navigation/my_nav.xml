@@ -68,17 +68,30 @@
         android:label="fragment_helpcenter"
         tools:layout="@layout/fragment_helpcenter" >
         <action
-            android:id="@+id/action_fragment_HelpCenter_to_btm_nav"
-            app:destination="@id/btm_nav" />
+            android:id="@+id/action_fragment_HelpCenter_to_fragment_profile"
+            app:destination="@id/fragment_profile" />
     </fragment>
     <fragment
         android:id="@+id/fragment_ListOfService"
         android:name="com.example.assigment.Fragment_ListOfService"
         android:label="fragment_listofservice"
-        tools:layout="@layout/fragment_listofservice" />
+        tools:layout="@layout/fragment_listofservice" >
+        <action
+            android:id="@+id/action_fragment_ListOfService_to_btm_nav"
+            app:destination="@id/btm_nav" />
+    </fragment>
     <activity
         android:id="@+id/serviceDetail"
         android:name="com.example.assigment.ServiceDetail"
         android:label="activity_service"
         tools:layout="@layout/activity_service" />
+    <fragment
+        android:id="@+id/fragment_AboutUs2"
+        android:name="com.example.assigment.Fragment_AboutUs"
+        android:label="fragment__about_us"
+        tools:layout="@layout/fragment__about_us" >
+        <action
+            android:id="@+id/action_fragment_AboutUs2_to_fragment_profile"
+            app:destination="@id/fragment_profile" />
+    </fragment>
 </navigation>

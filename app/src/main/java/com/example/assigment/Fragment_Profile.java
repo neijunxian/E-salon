@@ -80,9 +80,11 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener {
         ImageButton btnMyProfile = (ImageButton) view.findViewById(R.id.btnMyProfile);
         ImageButton btnChangePasswordPage = (ImageButton) view.findViewById(R.id.btnChangePasswordPage);
         ImageButton btnHelpCenter = (ImageButton) view.findViewById(R.id.btnHelpCenter);
+        ImageButton btnAbout = (ImageButton) view.findViewById(R.id.btnAbout) ;
         btnMyProfile.setOnClickListener(this);
         btnChangePasswordPage.setOnClickListener(this);
         btnHelpCenter.setOnClickListener(this);
+        btnAbout.setOnClickListener(this);
         final ImageButton logOut = (ImageButton) view.findViewById(R.id.btnLogOut);
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,7 +124,11 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_layout,fragment_helpCenter).addToBackStack(null).commit();
                 break;
-
+            case R.id.btnAbout:
+                Fragment_AboutUs fragment_aboutUs = new Fragment_AboutUs();
+                FragmentTransaction transaction1 = getFragmentManager().beginTransaction();
+                transaction1.replace(R.id.fragment_layout,fragment_aboutUs).addToBackStack(null).commit();
+                break;
         }
     }
 }
