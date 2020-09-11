@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.bumptech.glide.disklrucache.DiskLruCache;
 import com.example.assigment.Modal.User;
@@ -71,16 +72,21 @@ public class Fragment_message123<mchat> extends Fragment {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_message);
 
+
         username = view.findViewById(R.id.username);
         type_msg = view.findViewById(R.id.type_msg);
         btn_send = view.findViewById(R.id.btn_send);
 
         recyclerView = view.findViewById(R.id.recycler_watch);
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager( getContext());
-        linearLayoutManager.setStackFromEnd(true);
-        recyclerView.setAdapter(messageAdapter);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+
         recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setHasFixedSize(true);
+        linearLayoutManager.setStackFromEnd(true);
+
+
+        recyclerView.setAdapter(messageAdapter);
+
 
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());

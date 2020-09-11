@@ -37,10 +37,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         this.imageurl=imageURL;
     }
 
-    public <mchat> MessageAdapter(Fragment_message123 fragment_message123, List<chat> mchat, String imageurl) {
-
-    }
-
 
     @NonNull
     @Override
