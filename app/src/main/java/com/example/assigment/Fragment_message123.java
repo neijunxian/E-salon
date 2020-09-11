@@ -1,12 +1,9 @@
 package com.example.assigment;
 
-import android.app.AlertDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,16 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
-import com.bumptech.glide.disklrucache.DiskLruCache;
-import com.example.assigment.Modal.User;
 import com.example.assigment.Modal.chat;
+import com.example.assigment.adapter.MessageAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -32,9 +29,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.CDATASection;
-
-import java.security.cert.PolicyNode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,9 +38,10 @@ import java.util.List;
  * <p>
  * create an instance of this fragment.
  */
-public class Fragment_message123<mchat> extends Fragment {
+public class Fragment_message123 extends Fragment {
 
-    ImageButton btn_send;
+    ImageButton btn_send,btn_bck;
+    ImageView profile_image;
     EditText type_msg;
     TextView username;
 
@@ -61,8 +56,7 @@ public class Fragment_message123<mchat> extends Fragment {
     RecyclerView recyclerView;
 
     private long contentView;
-    private String userid;
-
+    private String userid = intent.getStringExtra("id");
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -72,10 +66,12 @@ public class Fragment_message123<mchat> extends Fragment {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_message);
 
-
         username = view.findViewById(R.id.username);
         type_msg = view.findViewById(R.id.type_msg);
         btn_send = view.findViewById(R.id.btn_send);
+
+
+
 
         recyclerView = view.findViewById(R.id.recycler_watch);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -84,14 +80,8 @@ public class Fragment_message123<mchat> extends Fragment {
         recyclerView.setHasFixedSize(true);
         linearLayoutManager.setStackFromEnd(true);
 
-
-        recyclerView.setAdapter(messageAdapter);
-
-
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
-
-
 
         /*
         reference.addValueEventListener(new ValueEventListener() {
@@ -108,8 +98,6 @@ public class Fragment_message123<mchat> extends Fragment {
         });
         */
 
-        final String userid="qcrHXEPsBfYmGDdPPGa4xEKgAAb2";
-
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -122,7 +110,6 @@ public class Fragment_message123<mchat> extends Fragment {
                 type_msg.setText("");
             }
         });
-
 
         return view;
     }
@@ -157,13 +144,13 @@ public class Fragment_message123<mchat> extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mchat.clear();
-                for (DataSnapshot snapshot1 : dataSnapshot.getChildren()) {
-                    chat chat = snapshot1.getValue(chat.class);
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    chat chat = snapshot.getValue(chat.class);
                     if ((chat.getReceiver().equals(myid) && chat.getSender().equals(userid)) || (chat.getReceiver().equals(userid) && chat.getSender().equals(myid))) {
                         mchat.add(chat);
                     }
 
-                    messageAdapter = new MessageAdapter(Fragment_message123.this, mchat, imageurl);
+                    messageAdapter = new MessageAdapter(getActivity(), mchat, imageurl);
                     recyclerView.setAdapter(messageAdapter);
 
                 }

@@ -1,7 +1,5 @@
 package com.example.assigment.Modal;
 
-import com.example.assigment.MessageAdapter;
-
 public class chat {
 
     private String sender;

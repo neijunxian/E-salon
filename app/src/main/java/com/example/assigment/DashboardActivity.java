@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.assigment.fragment.UsersFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DashboardActivity extends AppCompatActivity {
@@ -39,7 +40,7 @@ public class DashboardActivity extends AppCompatActivity {
                             break;
 
                         case R.id.action_Mailbox:
-                            selectedFragment = new Fragment_message123();
+                            selectedFragment = new UsersFragment();
                             break;
 
                         case R.id.action_deal:
