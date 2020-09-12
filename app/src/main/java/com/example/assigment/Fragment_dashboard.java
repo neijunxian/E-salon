@@ -42,9 +42,8 @@ public class Fragment_dashboard extends Fragment implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.haircut:
-                Fragment_ListOfService fragment_listOfService = new Fragment_ListOfService();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_layout,fragment_listOfService).addToBackStack(null).commit();
+                Intent intent = new Intent(getActivity(), ServiceDetail.class);
+                startActivity(intent);
                 break;
         }
     }
