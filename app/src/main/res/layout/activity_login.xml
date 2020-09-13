@@ -65,10 +65,9 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
         android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/regular"
         android:text="Need Help?"
@@ -77,8 +76,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/loginButton"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
-        app:layout_constraintVertical_bias="0.092
-" />
+        app:layout_constraintVertical_bias="0.052" />
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/regular"
+        android:text="Forgot Password?"
+        android:textColor="@color/red"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/loginButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView6"
@@ -101,8 +113,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/bold"
         android:onClick="register"
@@ -114,9 +128,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
-        app:layout_constraintVertical_bias="1.0"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="8dp" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView8"
@@ -142,11 +154,11 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
         android:layout_marginTop="36dp"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.089"
-        app:srcCompat="@drawable/back"
-        android:layout_marginLeft="28dp" />
+        app:srcCompat="@drawable/back" />
 </androidx.constraintlayout.widget.ConstraintLayout>

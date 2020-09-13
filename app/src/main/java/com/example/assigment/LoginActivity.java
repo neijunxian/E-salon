@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
     ImageView backButton;
+    TextView forgotPassword;
     private Button buttonLogin;
     private EditText editTextUserName, editTextPassword;
     FirebaseAuth auth;
@@ -43,12 +45,21 @@ public class LoginActivity extends AppCompatActivity {
 
         editTextUserName = findViewById(R.id.editTextUserName);
         editTextPassword = findViewById(R.id.editTextPassword);
+        forgotPassword=findViewById(R.id.forgotPassword);
         auth = FirebaseAuth.getInstance();
         buttonLogin = findViewById(R.id.loginButton);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 buttonLogin_onClick(view);
+            }
+        });
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,ForgotPassword.class);
+                startActivity(intent);
             }
         });
     }
