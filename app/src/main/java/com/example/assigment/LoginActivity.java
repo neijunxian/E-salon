@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
 
         editTextUserName = findViewById(R.id.editTextUserName);
         editTextPassword = findViewById(R.id.editTextPassword);
-        forgotPassword=findViewById(R.id.forgotPassword);
+        forgotPassword = findViewById(R.id.forgotPassword);
         auth = FirebaseAuth.getInstance();
         buttonLogin = findViewById(R.id.loginButton);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,ForgotPassword.class);
+                Intent intent = new Intent(LoginActivity.this, ForgotPassword.class);
                 startActivity(intent);
             }
         });
@@ -87,21 +87,35 @@ public class LoginActivity extends AppCompatActivity {
             });
             builder.show();
         } else {
-            auth.signInWithEmailAndPassword(email, password)//here
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                pd.dismiss();
-                                Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
-                                startActivity(intent);
-                                finish();
-                            } else {
-                                pd.dismiss();
-                                Toast.makeText(LoginActivity.this, "Authentication failed!", Toast.LENGTH_SHORT).show();
+            if (password.length() < 6) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+                builder.setTitle(R.string.error);
+                builder.setMessage(R.string.password_length);
+                builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                builder.show();
+            } else {
+                auth.signInWithEmailAndPassword(email, password)//here
+                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    pd.dismiss();
+                                    Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    pd.dismiss();
+                                    Toast.makeText(LoginActivity.this, "Authentication failed!", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
-                    });
+                        });
+            }
+
         }
     }
 }

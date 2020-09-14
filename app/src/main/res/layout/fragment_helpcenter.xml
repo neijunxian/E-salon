@@ -8,13 +8,12 @@
     tools:context=".Fragment_HelpCenter">
 
     <!-- TODO: Update blank fragment layout -->
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/red"
-        app:titleTextColor="@color/white"
-        app:title="Help Center">
-    </androidx.appcompat.widget.Toolbar>
+    <include
+        android:id="@+id/myToolbar"
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="114dp">
+    </include>
 
     <TextView
         android:layout_width="wrap_content"

@@ -80,6 +80,7 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
         radioGroup = findViewById(R.id.radioGrp);
         buttonMale = findViewById(R.id.radioButtonMale);
         buttonFemale = findViewById(R.id.radioButtonFemale);
+        backBtn =findViewById(R.id.backBtn);
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
         loadData();
 
@@ -101,6 +102,13 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
             @Override
             public void onClick(View v) {
                 buttonSave_Click(v);
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

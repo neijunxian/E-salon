@@ -7,6 +7,7 @@
     tools:context=".ServiceDetail">
 
     <include
+        android:id="@+id/myToolbar"
         layout="@layout/toolbar"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="114dp">

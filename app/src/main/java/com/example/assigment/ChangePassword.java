@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.assigment.Modal.User;
@@ -32,6 +33,7 @@ import java.util.HashMap;
 public class ChangePassword extends AppCompatActivity {
     private EditText  editTextNewPassword, editTextConfPassword;
     private Button btnSave;
+    private ImageButton btnBack;
     public String oldpassowrd;
     DatabaseReference reference;
     private FirebaseUser fuser;
@@ -42,11 +44,18 @@ public class ChangePassword extends AppCompatActivity {
         setContentView(R.layout.activity_change_password);
         editTextNewPassword = findViewById(R.id.NewTextPassword);
         editTextConfPassword = findViewById(R.id.confirmPassword);
+        btnBack=findViewById(R.id.backBtn);
         btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 buttonSave_onClick(view);
+            }
+        });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
         loadData();
@@ -82,7 +91,7 @@ public class ChangePassword extends AppCompatActivity {
                 builder.show();
             }else{
                 final ProgressDialog pd = new ProgressDialog(this);
-                pd.setMessage("Uploading");
+                pd.setMessage("Update");
                 pd.show();
                 final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
                 AuthCredential credential = EmailAuthProvider

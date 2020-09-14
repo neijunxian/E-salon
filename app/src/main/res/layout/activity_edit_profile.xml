@@ -76,118 +76,113 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="290dp">
+        android:layout_height="600dp"
+        android:layout_marginTop="300dp"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginLeft="44dp"
+            android:fontFamily="@font/bold"
+            android:text="UserName"
+            android:textSize="16sp" />
 
-            <TextView
+
+        <EditText
+            android:id="@+id/FullName"
+            android:layout_width="311dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="44dp"
+            android:background="@drawable/input_field"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="44dp"
+            android:fontFamily="@font/bold"
+            android:text="Email"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/Email"
+            android:layout_width="311dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="44dp"
+            android:background="@drawable/input_field"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="44dp"
+            android:fontFamily="@font/bold"
+            android:text="Phone"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="311dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="44dp"
+            android:background="@drawable/input_field"
+            android:ems="10"
+            android:inputType="textPhonetic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="44dp"
+            android:fontFamily="@font/bold"
+            android:text="Gender"
+            android:textSize="16sp" />
+
+
+        <RadioGroup
+            android:id="@+id/radioGrp"
+            android:layout_width="200dp"
+            android:layout_height="40sp"
+            android:layout_marginLeft="44dp"
+            android:background="@drawable/input_field"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonMale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="44dp"
-                android:fontFamily="@font/bold"
-                android:text="UserName"
-                android:textSize="16sp" />
+                android:text="Male" />
 
-
-            <EditText
-                android:id="@+id/FullName"
-                android:layout_width="311dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="44dp"
-                android:background="@drawable/input_field"
-                android:ems="10"
-                android:inputType="textPersonName" />
-
-            <TextView
+            <RadioButton
+                android:id="@+id/radioButtonFemale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="44dp"
-                android:fontFamily="@font/bold"
-                android:text="Email"
-                android:textSize="16sp" />
+                android:text="Female" />
+        </RadioGroup>
 
-            <EditText
-                android:id="@+id/Email"
-                android:layout_width="311dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="44dp"
-                android:background="@drawable/input_field"
-                android:ems="10"
-                android:inputType="textEmailAddress" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="44dp"
+            android:fontFamily="@font/bold"
+            android:text="Date of birth"
+            android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="44dp"
-                android:fontFamily="@font/bold"
-                android:text="Phone"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/editTextPhone"
-                android:layout_width="311dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="44dp"
-                android:background="@drawable/input_field"
-                android:ems="10"
-                android:inputType="textPhonetic" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="44dp"
-                android:fontFamily="@font/bold"
-                android:text="Gender"
-                android:textSize="16sp" />
-
-
-            <RadioGroup
-                android:id="@+id/radioGrp"
-                android:layout_width="200dp"
-                android:layout_height="40sp"
-                android:layout_marginLeft="44dp"
-                android:background="@drawable/input_field"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/radioButtonMale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Male" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonFemale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Female" />
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="44dp"
-                android:fontFamily="@font/bold"
-                android:text="Date of birth"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/birth"
-                android:layout_width="311dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="44dp"
-                android:background="@drawable/input_field"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textSize="26sp" />
-        </LinearLayout>
-
-    </ScrollView>
+        <TextView
+            android:id="@+id/birth"
+            android:layout_width="311dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="44dp"
+            android:background="@drawable/input_field"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="26sp" />
+    </LinearLayout>
 
 
 </RelativeLayout>

@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class ServiceDetail extends AppCompatActivity {
 
-    private Toolbar toolbar;
+
     private TextView mchangeText;
     private String s1,s2,s3;
 
@@ -19,8 +19,12 @@ public class ServiceDetail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service);
-        toolbar=findViewById(R.id.myToolbar);
+
+        /*Toolbar toolbar = findViewById(R.id.myToolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Service Detail");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
+
         s1 =  getResources().getString(R.string.haircut1);
         s2=  getResources().getString(R.string.haircut2);
         s3=   getResources().getString(R.string.haircut3);
