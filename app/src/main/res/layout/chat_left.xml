@@ -17,6 +17,7 @@
         android:layout_toRightOf="@+id/profile_image_mess"
         android:layout_marginLeft="5dp"
         android:text="hello"
+        android:id="@+id/show_message"
         android:padding="8dp"
         android:background="@drawable/backgound_left"/>
 

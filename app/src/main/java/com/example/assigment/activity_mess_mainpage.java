@@ -141,7 +141,9 @@ public class activity_mess_mainpage extends AppCompatActivity {
                             return true;
 
                         case R.id.action_Mailbox:
-                            break;
+                            startActivity(new Intent(getApplicationContext(),activity_mess_mainpage.class));
+                            overridePendingTransition(0,0);
+                            return true;
 
                         case R.id.action_deal:
 
