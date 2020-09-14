@@ -57,7 +57,11 @@
         android:id="@+id/fragment_message"
         android:name="com.example.assigment.Fragment_message123"
         android:label="fragment_message"
-        tools:layout="@layout/fragment_message" />
+        tools:layout="@layout/fragment_message" >
+        <action
+            android:id="@+id/action_fragment_message_to_usersFragment"
+            app:destination="@id/usersFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_HelpCenter"
         android:name="com.example.assigment.Fragment_HelpCenter"
@@ -96,9 +100,14 @@
         android:label="fragment_users"
         tools:layout="@layout/fragment_users" >
         <action
-            android:id="@+id/action_usersFragment_to_btm_nav2"
-            app:destination="@id/btm_nav" />
+            android:id="@+id/action_usersFragment_to_activity_mess_mainpage2"
+            app:destination="@id/activity_mess_mainpage" />
     </fragment>
+    <activity
+        android:id="@+id/activity_mess_mainpage"
+        android:name="com.example.assigment.activity_mess_mainpage"
+        android:label="activity_mess_mainpage"
+        tools:layout="@layout/activity_mess_mainpage" />
 
 
 </navigation>

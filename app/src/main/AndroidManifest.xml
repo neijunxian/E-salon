@@ -14,10 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activity_mess_mainpage"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".ForgotPassword"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".LoginActivity"></activity>
-        <activity android:name=".activity_message_admin" />
+            android:parentActivityName=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity_message_admin"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ChangePassword"
             android:theme="@style/AppTheme.NoActionBar" />

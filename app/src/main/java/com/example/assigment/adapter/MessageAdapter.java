@@ -17,6 +17,8 @@ import com.example.assigment.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 
@@ -36,10 +38,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         this.imageurl=imageURL;
     }
 
-
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MessageAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == MSG_TYPE_right){
             View view = LayoutInflater.from(mContext).inflate(R.layout.chat_right,parent, false);
             return new MessageAdapter.ViewHolder(view);
@@ -47,15 +48,12 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             View view = LayoutInflater.from(mContext).inflate(R.layout.chat_left,parent, false);
             return new MessageAdapter.ViewHolder(view);
         }
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         chat chat =mChat.get(position);
-
         holder.show_message.setText(chat.getMessage());
-
         if(imageurl.equals("default")){
             holder.profile_image.setImageResource(R.mipmap.ic_launcher);
         }else{
@@ -69,16 +67,13 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-
         public TextView show_message;
         public ImageView profile_image;
 
         public ViewHolder (View itemView){
             super(itemView);
-
             show_message = itemView.findViewById(R.id.show_message);
             profile_image =itemView.findViewById(R.id.profile_image_mess);
-
         }
     }
 

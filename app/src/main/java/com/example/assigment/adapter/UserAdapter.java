@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.example.assigment.Fragment_message123;
 import com.example.assigment.Modal.User;
 import com.example.assigment.R;
+import com.example.assigment.activity_message_admin;
 
 import java.util.List;
 
@@ -50,7 +51,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(mContext, Fragment_message123.class);
+                Intent intent =new Intent(mContext, activity_message_admin.class);
                 intent.putExtra("id", user.getId());
                 mContext.startActivity(intent);
             }

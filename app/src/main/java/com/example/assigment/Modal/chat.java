@@ -12,6 +12,9 @@ public class chat {
         this.message=message;
     }
 
+    public chat(){
+    }
+
     public String getSender(){
         return sender;
     }

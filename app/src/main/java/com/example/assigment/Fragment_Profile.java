@@ -69,7 +69,6 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener {
                         Glide.with(getActivity().getApplicationContext()).load(user.getImageURL()).into(profile_image);
                     }
                 }
-
             }
 
             @Override

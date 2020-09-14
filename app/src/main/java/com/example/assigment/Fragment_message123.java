@@ -33,11 +33,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * <p>
- * create an instance of this fragment.
- */
+
 public class Fragment_message123 extends Fragment {
 
     ImageButton btn_send,btn_bck;
@@ -70,9 +66,6 @@ public class Fragment_message123 extends Fragment {
         type_msg = view.findViewById(R.id.type_msg);
         btn_send = view.findViewById(R.id.btn_send);
 
-
-
-
         recyclerView = view.findViewById(R.id.recycler_watch);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
 
@@ -81,7 +74,7 @@ public class Fragment_message123 extends Fragment {
         linearLayoutManager.setStackFromEnd(true);
 
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        reference = FirebaseDatabase.getInstance().getReference("User").child(userid);
 
         /*
         reference.addValueEventListener(new ValueEventListener() {
@@ -113,8 +106,6 @@ public class Fragment_message123 extends Fragment {
 
         return view;
     }
-
-
 
     private void sendMsg (String sender,String receiver,String message){
         DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
@@ -154,7 +145,6 @@ public class Fragment_message123 extends Fragment {
                     recyclerView.setAdapter(messageAdapter);
 
                 }
-
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -11,8 +13,6 @@ import com.example.assigment.fragment.UsersFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DashboardActivity extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +23,6 @@ public class DashboardActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_layout, new Fragment_dashboard()).commit();
-
 
     }
 
@@ -40,8 +39,9 @@ public class DashboardActivity extends AppCompatActivity {
                             break;
 
                         case R.id.action_Mailbox:
-                            selectedFragment = new UsersFragment();
-                            break;
+                            startActivity(new Intent(getApplicationContext(),activity_mess_mainpage.class));
+                            overridePendingTransition(0,0);
+                            return true;
 
                         case R.id.action_deal:
 
@@ -57,10 +57,7 @@ public class DashboardActivity extends AppCompatActivity {
                             .replace(R.id.fragment_layout
                                     , selectedFragment).commit();
 
-
                     return true;
                 }
             };
-
-
 }
