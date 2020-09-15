@@ -1,5 +1,6 @@
 package com.example.assigment;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -7,46 +8,73 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.assigment.Modal.Detail;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import java.util.Map;
 
 public class ServiceDetail extends AppCompatActivity {
 
+    private ImageView serviceImage;
+    private TextView servicePrice, serviceName,serviceTime;
+    private String serviceID ="";
 
-    private TextView mchangeText;
-    private String s1,s2,s3;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service);
-
         /*Toolbar toolbar = findViewById(R.id.myToolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Service Detail");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
+        serviceID = getIntent().getStringExtra("pid");
 
-        s1 =  getResources().getString(R.string.haircut1);
-        s2=  getResources().getString(R.string.haircut2);
-        s3=   getResources().getString(R.string.haircut3);
-        mchangeText = findViewById(R.id.detail);
+        serviceImage = (ImageView) findViewById(R.id.service_image_details);
+        servicePrice = (TextView) findViewById(R.id.service_price_details);
+        serviceName = (TextView) findViewById(R.id.service_name_details);
+        serviceTime = (TextView) findViewById(R.id.service_time_details);
+
+        getServiceDetails(serviceID);
+        
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.menu,menu);
-        return true;
+    private void getServiceDetails(String serviceID)
+    {
+        DatabaseReference serviceRef = FirebaseDatabase.getInstance().getReference("Detail");
+        serviceRef.child(serviceID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot)
+            {
+                if (snapshot.exists())
+                {
+                    Detail detail = snapshot.getValue(Detail.class);
+                    serviceName.setText(detail.getWhom());
+                    serviceTime.setText(detail.getTime());
+                    servicePrice.setText(detail.getPrice());
+                    Picasso.get().load(detail.getPicture()).into(serviceImage);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error)
+            {
+
+            }
+        });
     }
 
-    public void changeText(View view) {
-        mchangeText.setText(s1);
-    }
 
-    public void changeText2(View view) {
-        mchangeText.setText(s2);
-    }
-
-    public void changeText3(View view) {
-        mchangeText.setText(s3);
-    }
 }

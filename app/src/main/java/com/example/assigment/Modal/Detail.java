@@ -2,18 +2,18 @@ package com.example.assigment.Modal;
 
 public class Detail
 {
-    private String whom,picture,price,time;
-
+    private String whom,picture,price,time,pid ;
     public Detail()
     {
 
     }
 
-    public Detail(String whom, String picture, String price, String time) {
+    public Detail(String whom, String picture, String price, String time, String pid) {
         this.whom = whom;
         this.picture = picture;
         this.price = price;
         this.time = time;
+        this.pid = pid;
     }
 
     public String getWhom() {
@@ -46,5 +46,13 @@ public class Detail
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getPid() {
+        return pid;
+    }
+
+    public void setPid(String pid) {
+        this.pid = pid;
     }
 }

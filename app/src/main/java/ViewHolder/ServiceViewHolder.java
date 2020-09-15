@@ -13,7 +13,7 @@ import Interface.ServiceClickListner;
 
 public class ServiceViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
 {
-    public TextView txtServiceName;
+    public TextView txtServiceName,txtServicePrice,txtServiceTime;
     public ImageView imageView;
     public ServiceClickListner listner;
 
@@ -22,6 +22,8 @@ public class ServiceViewHolder extends RecyclerView.ViewHolder implements View.O
 
         imageView = (ImageView) itemView.findViewById(R.id.service_image);
         txtServiceName = (TextView) itemView.findViewById(R.id.service_name);
+        txtServicePrice = (TextView) itemView.findViewById(R.id.service_price_details);
+        txtServiceTime = (TextView) itemView.findViewById(R.id.service_time_details);
     }
     public void setItemClickListner(ServiceClickListner listner)
     {

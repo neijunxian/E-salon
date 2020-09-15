@@ -65,13 +65,7 @@ public class Fragment_dashboard extends Fragment implements View.OnClickListener
             {
                 holder.txtServiceName.setText(model.getWhom());
                 Picasso.get().load(model.getPicture()).into(holder.imageView);
-                holder.imageView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(getActivity(),ServiceDetail.class);
-                        startActivity(intent);
-                    }
-                });
+
             }
 
             @NonNull
