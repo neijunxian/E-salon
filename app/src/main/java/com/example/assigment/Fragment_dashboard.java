@@ -79,9 +79,7 @@ public class Fragment_dashboard extends Fragment implements View.OnClickListener
         };
         recyclerView.setAdapter(adapter);
         adapter.startListening();
-
     }
-
     @Override
     public void onClick(View v) {
 
