@@ -75,7 +75,6 @@ public class EditProfile extends AppCompatActivity implements AdapterView.OnItem
         editTextName = findViewById(R.id.FullName);
         editTextEmail = findViewById(R.id.Email);
         editTextPhone = findViewById(R.id.editTextPhone);
-        editTextBitrh = findViewById(R.id.birth);
         profile_image = findViewById(R.id.profile_image_mess);
         radioGroup = findViewById(R.id.radioGrp);
         buttonMale = findViewById(R.id.radioButtonMale);

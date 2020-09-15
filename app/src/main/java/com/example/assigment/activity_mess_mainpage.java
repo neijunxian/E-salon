@@ -56,7 +56,7 @@ public class activity_mess_mainpage extends AppCompatActivity {
 
 
         profile_image = findViewById(R.id.profile_image_mess);
-        username= findViewById(R.id.username_mess);
+        username = findViewById(R.id.username_mess);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
@@ -66,9 +66,9 @@ public class activity_mess_mainpage extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
                 username.setText(user.getUsername());
-                if(user.getImageURL().equals("default")){
+                if (user.getImageURL().equals("default")) {
                     profile_image.setImageResource(R.mipmap.ic_launcher);
-                }else{
+                } else {
                     Glide.with(activity_mess_mainpage.this).load(user.getImageURL()).into(profile_image);
                 }
             }
@@ -90,8 +90,8 @@ public class activity_mess_mainpage extends AppCompatActivity {
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        viewPagerAdapter.addFragment(new ChatFragment(),"chat");
-        viewPagerAdapter.addFragment(new UsersFragment(),"User");
+        viewPagerAdapter.addFragment(new ChatFragment(), "chat");
+        viewPagerAdapter.addFragment(new UsersFragment(), "User");
 
         viewPager.setAdapter(viewPagerAdapter);
 
@@ -99,14 +99,14 @@ public class activity_mess_mainpage extends AppCompatActivity {
 
     }
 
-    class  ViewPagerAdapter extends FragmentPagerAdapter{
+    class ViewPagerAdapter extends FragmentPagerAdapter {
         private ArrayList<Fragment> fragments;
         private ArrayList<String> titles;
 
-        ViewPagerAdapter(FragmentManager fm){
+        ViewPagerAdapter(FragmentManager fm) {
             super(fm);
-            this.fragments=new ArrayList<>();
-            this.titles=new ArrayList<>();
+            this.fragments = new ArrayList<>();
+            this.titles = new ArrayList<>();
         }
 
         @NonNull
@@ -120,14 +120,14 @@ public class activity_mess_mainpage extends AppCompatActivity {
             return fragments.size();
         }
 
-        public void addFragment(Fragment fragment,String title){
+        public void addFragment(Fragment fragment, String title) {
             fragments.add(fragment);
             titles.add(title);
         }
 
         @Nullable
         @Override
-        public CharSequence getPageTitle(int position){
+        public CharSequence getPageTitle(int position) {
             return titles.get(position);
         }
     }
@@ -137,20 +137,20 @@ public class activity_mess_mainpage extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
-                    AppBarLayout appBar=(AppBarLayout)findViewById(R.id.appbar);
-                    RelativeLayout.LayoutParams params= (RelativeLayout.LayoutParams) appBar.getLayoutParams();
-                    params.height=0;
+                    AppBarLayout appBar = (AppBarLayout) findViewById(R.id.appbar);
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) appBar.getLayoutParams();
+                    params.height = 0;
                     appBar.setLayoutParams(params);
-                    overridePendingTransition(0,0);
+                    overridePendingTransition(0, 0);
                     switch (item.getItemId()) {
                         case R.id.action_Home:
-
-                           selectedFragment = new Fragment_dashboard();
-                           break;
+                            selectedFragment = new Fragment_dashboard();
+                            break;
 
                         case R.id.action_Mailbox:
-                            startActivity(new Intent(getApplicationContext(),activity_mess_mainpage.class));
-                            overridePendingTransition(0,0);
+                            startActivity(new Intent(getApplicationContext(), activity_mess_mainpage.class));
+                            overridePendingTransition(0, 0);
+                            finish();
                             return true;
 
                         case R.id.action_deal:

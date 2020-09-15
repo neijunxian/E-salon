@@ -41,6 +41,7 @@ public class DashboardActivity extends AppCompatActivity {
                         case R.id.action_Mailbox:
                             startActivity(new Intent(getApplicationContext(),activity_mess_mainpage.class));
                             overridePendingTransition(0,0);
+                            finish();
                             return true;
 
                         case R.id.action_deal:
