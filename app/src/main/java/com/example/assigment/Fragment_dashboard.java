@@ -72,7 +72,7 @@ public class Fragment_dashboard extends Fragment implements View.OnClickListener
             @Override
             public ServiceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
             {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_dashboard, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.servicer_layout, parent, false);
                 ServiceViewHolder holder= new ServiceViewHolder(view);
                 return holder;
             }

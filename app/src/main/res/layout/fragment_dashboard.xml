@@ -57,6 +57,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.091" />
 
-
+    <include
+        layout="@layout/servicer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="220dp"></include>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
