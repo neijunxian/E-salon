@@ -13,16 +13,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Fragment_mess_mainpage"></activity>
         <activity
             android:name=".activity_mess_mainpage"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ForgotPassword"
             android:parentActivityName=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity_message_admin"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ChangePassword"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -40,8 +41,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ServiceDetail"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".DashboardActivity"/>
+            android:parentActivityName=".DashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

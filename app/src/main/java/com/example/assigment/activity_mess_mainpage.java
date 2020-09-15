@@ -13,7 +13,10 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -49,17 +52,9 @@ public class activity_mess_mainpage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mess_mainpage);
 
-        BottomNavigationView btnNav = findViewById(R.id.bottomNavigationView);
-        btnNav.setSelectedItemId(R.id.action_Mailbox);
-        btnNav.setOnNavigationItemSelectedListener(navListener);
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.mess_home, new Fragment()).commit();
-
 
         profile_image = findViewById(R.id.profile_image_mess);
         username= findViewById(R.id.username_mess);
-
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
@@ -81,6 +76,12 @@ public class activity_mess_mainpage extends AppCompatActivity {
 
             }
         });
+        BottomNavigationView btnNav = findViewById(R.id.bottomNavigationView);
+        btnNav.setSelectedItemId(R.id.action_Mailbox);
+        btnNav.setOnNavigationItemSelectedListener(navListener);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.mess_home, new Fragment()).commit();
 
         TabLayout tabLayout = findViewById(R.id.tab_layout_mess);
         ViewPager viewPager = findViewById(R.id.view_pager_mess);
@@ -93,6 +94,7 @@ public class activity_mess_mainpage extends AppCompatActivity {
         viewPager.setAdapter(viewPagerAdapter);
 
         tabLayout.setupWithViewPager(viewPager);
+
     }
 
     class  ViewPagerAdapter extends FragmentPagerAdapter{
@@ -150,9 +152,10 @@ public class activity_mess_mainpage extends AppCompatActivity {
                             break;
 
                         case R.id.action_Profile:
+                            startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
+                            overridePendingTransition(0,0);
                             selectedFragment = new Fragment_Profile();
                             break;
-
                     }
 
                     getSupportFragmentManager().beginTransaction()
