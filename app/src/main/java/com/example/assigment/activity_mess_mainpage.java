@@ -137,15 +137,14 @@ public class activity_mess_mainpage extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
-
+                    AppBarLayout appBar=(AppBarLayout)findViewById(R.id.appbar);
+                    RelativeLayout.LayoutParams params= (RelativeLayout.LayoutParams) appBar.getLayoutParams();
+                    params.height=0;
+                    appBar.setLayoutParams(params);
+                    overridePendingTransition(0,0);
                     switch (item.getItemId()) {
                         case R.id.action_Home:
-                           /* startActivity(new Intent(getApplicationContext(),DashboardActivity.class));*/
-                            AppBarLayout appBar=(AppBarLayout)findViewById(R.id.appbar);
-                            RelativeLayout.LayoutParams params= (RelativeLayout.LayoutParams) appBar.getLayoutParams();
-                            params.height=0;
-                            appBar.setLayoutParams(params);
-                            overridePendingTransition(0,0);
+
                            selectedFragment = new Fragment_dashboard();
                            break;
 
@@ -159,11 +158,6 @@ public class activity_mess_mainpage extends AppCompatActivity {
                             break;
 
                         case R.id.action_Profile:
-                            AppBarLayout appBar1=(AppBarLayout)findViewById(R.id.appbar);
-                            RelativeLayout.LayoutParams params1= (RelativeLayout.LayoutParams) appBar1.getLayoutParams();
-                            params1.height=0;
-                            appBar1.setLayoutParams(params1);
-                            overridePendingTransition(0,0);
                             selectedFragment = new Fragment_Profile();
                             break;
                     }
