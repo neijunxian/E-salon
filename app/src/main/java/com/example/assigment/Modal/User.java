@@ -10,8 +10,9 @@ public class User {
     private String phone;
     private String email;
     private String password;
+    private String search;
 
-    public User(String id, String username, String fullname, String gender, String birth, String imageURL, String phone, String email, String password) {
+    public User(String id, String username, String fullname, String gender, String birth, String imageURL, String phone, String email, String password,String search) {
         this.id = id;
         this.username = username;
         this.fullname = fullname;
@@ -21,6 +22,7 @@ public class User {
         this.phone = phone;
         this.email = email;
         this.password = password;
+        this.search = search;
     }
 
     public User() {
@@ -96,5 +98,12 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getSearch() {
+        return search;
+    }
+    public void setSearch(String search){
+        this.search = search;
     }
 }
