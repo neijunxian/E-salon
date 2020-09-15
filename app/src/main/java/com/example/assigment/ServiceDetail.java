@@ -35,10 +35,10 @@ public class ServiceDetail extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service);
-        /*Toolbar toolbar = findViewById(R.id.myToolbar);
+        Toolbar toolbar = findViewById(R.id.myToolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Service Detail");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         serviceID = getIntent().getStringExtra("pid");
 
         serviceImage = (ImageView) findViewById(R.id.service_image_details);

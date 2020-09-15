@@ -60,13 +60,23 @@ public class Fragment_dashboard extends Fragment implements View.OnClickListener
 
         FirebaseRecyclerOptions<Detail> options = new FirebaseRecyclerOptions.Builder<Detail>().setQuery(ServiceRef, Detail.class).build();
         FirebaseRecyclerAdapter<Detail, ServiceViewHolder> adapter = new FirebaseRecyclerAdapter<Detail, ServiceViewHolder>(options) {
+
             @Override
-            protected void onBindViewHolder(@NonNull ServiceViewHolder holder, int position, @NonNull Detail model)
+            protected void onBindViewHolder(@NonNull ServiceViewHolder holder, int position, @NonNull final Detail model)
             {
                 holder.txtServiceName.setText(model.getWhom());
                 Picasso.get().load(model.getPicture()).into(holder.imageView);
 
-            }
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view)
+                    {
+                        Intent intent = new Intent(getActivity() ,ServiceDetail.class);
+                        intent.putExtra("pid",  model.getPid());
+                        startActivity(intent);
+                    }
+                });
+            };
 
             @NonNull
             @Override
