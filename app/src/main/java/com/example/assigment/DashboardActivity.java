@@ -35,9 +35,8 @@ public class DashboardActivity extends AppCompatActivity {
 
                     switch (item.getItemId()) {
                         case R.id.action_Home:
-                            startActivity(new Intent(getApplicationContext(),Fragment_dashboard.class));
-                            overridePendingTransition(0,0);
-                            return true;
+                            selectedFragment = new Fragment_dashboard();
+                            break;
 
                         case R.id.action_Mailbox:
                             startActivity(new Intent(getApplicationContext(),activity_mess_mainpage.class));
