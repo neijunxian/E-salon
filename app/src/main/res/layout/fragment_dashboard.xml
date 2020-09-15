@@ -57,199 +57,51 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.091" />
 
-    <ImageButton
-        android:id="@+id/Coloring"
-        android:layout_width="155.5dp"
-        android:layout_height="103.5dp"
+    <RelativeLayout
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.208"
-        app:srcCompat="@drawable/coloring" />
-
-    <ImageButton
-        android:id="@+id/Treatment"
-        android:layout_width="155.5dp"
-        android:layout_height="103.5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416"
-        app:srcCompat="@drawable/styling" />
-
-    <ImageButton
-        android:id="@+id/Styling"
-        android:layout_width="155.5dp"
-        android:layout_height="103.5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416"
-        app:srcCompat="@drawable/hairdryer" />
-
-    <ImageButton
-        android:id="@+id/HairSpa"
-        android:layout_width="155.5dp"
-        android:layout_height="103.5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637"
-        app:srcCompat="@drawable/spa" />
-
-    <ImageButton
-        android:id="@+id/HiarPerm"
-        android:layout_width="155.5dp"
-        android:layout_height="103.5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637"
-        app:srcCompat="@drawable/shampoo" />
-
-    <ImageButton
-        android:id="@+id/Shawing"
-        android:layout_width="155.5dp"
-        android:layout_height="103.5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.859"
-        app:srcCompat="@drawable/shawing" />
-
-    <ImageButton
-        android:id="@+id/More"
-        android:layout_width="155.5dp"
-        android:layout_height="103.5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.859"
-        app:srcCompat="@drawable/black_btn" />
-
-    <ImageButton
-        android:id="@+id/haircut"
-        android:layout_width="155.5dp"
-        android:layout_height="103.5dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.208"
-        app:srcCompat="@drawable/haircut" />
-
-    <Button
-        android:id="@+id/Search_button_homepage"
-        android:layout_width="50dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="36dp"
-        android:text="Button"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            app:cardElevation="15dp"
+            >
 
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="More..."
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/More"
-        app:layout_constraintEnd_toEndOf="@+id/More"
-        app:layout_constraintStart_toStartOf="@+id/More"
-        app:layout_constraintTop_toTopOf="@+id/More" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Shawing"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Shawing"
-        app:layout_constraintEnd_toEndOf="@+id/Shawing"
-        app:layout_constraintStart_toStartOf="@+id/Shawing"
-        app:layout_constraintTop_toTopOf="@+id/Shawing" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recycler_menu"
+                    android:scrollbars="vertical"
+                    >
+                </androidx.recyclerview.widget.RecyclerView>
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hair Perm"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/HiarPerm"
-        app:layout_constraintEnd_toEndOf="@+id/HiarPerm"
-        app:layout_constraintStart_toStartOf="@+id/HiarPerm"
-        app:layout_constraintTop_toTopOf="@+id/HiarPerm" />
+                <TextView
+                    android:id="@+id/service_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Service Name"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HairSpa"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/HairSpa"
-        app:layout_constraintEnd_toEndOf="@+id/HairSpa"
-        app:layout_constraintStart_toStartOf="@+id/HairSpa"
-        app:layout_constraintTop_toTopOf="@+id/HairSpa" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Treatment"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Treatment"
-        app:layout_constraintEnd_toEndOf="@+id/Treatment"
-        app:layout_constraintStart_toStartOf="@+id/Treatment"
-        app:layout_constraintTop_toTopOf="@+id/Treatment" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Styling"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Styling"
-        app:layout_constraintEnd_toEndOf="@+id/Styling"
-        app:layout_constraintStart_toStartOf="@+id/Styling"
-        app:layout_constraintTop_toTopOf="@+id/Styling" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Coloring"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/Coloring"
-        app:layout_constraintEnd_toEndOf="@+id/Coloring"
-        app:layout_constraintStart_toStartOf="@+id/Coloring"
-        app:layout_constraintTop_toTopOf="@+id/Coloring" />
-
+                <ImageView
+                    android:id="@+id/service_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_below="@id/service_name"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="2dp"
+                    />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
