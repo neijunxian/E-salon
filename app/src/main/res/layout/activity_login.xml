@@ -18,7 +18,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/input_field"
         android:ems="10"
-        android:hint="User Name"
+        android:hint="Email"
         android:inputType="textPersonName"
         android:textColorHint="@color/tarawera"
         app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
