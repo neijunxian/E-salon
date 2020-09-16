@@ -154,8 +154,9 @@ public class activity_mess_mainpage extends AppCompatActivity {
                             return true;
 
                         case R.id.action_deal:
-
-                            break;
+                            Intent intent = new Intent(activity_mess_mainpage.this,BookingActivity.class);
+                            startActivity(intent);
+                            return true;
 
                         case R.id.action_Profile:
                             selectedFragment = new Fragment_Profile();

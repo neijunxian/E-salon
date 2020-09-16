@@ -45,8 +45,9 @@ public class DashboardActivity extends AppCompatActivity {
                             return true;
 
                         case R.id.action_deal:
-
-                            break;
+                            Intent intent = new Intent(DashboardActivity.this,BookingActivity.class);
+                            startActivity(intent);
+                            return true;
 
                         case R.id.action_Profile:
                             selectedFragment = new Fragment_Profile();
