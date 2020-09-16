@@ -155,13 +155,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="21dp"
                 android:layout_marginTop="9dp"
-                android:text="Update"
+                android:text="Booking History"
                 android:textSize="18sp" />
 
             <ImageButton
+                android:id="@+id/update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="165dp"
+                android:layout_marginLeft="98dp"
                 android:layout_marginTop="9dp"
                 android:background="@drawable/right_arrow" />
 

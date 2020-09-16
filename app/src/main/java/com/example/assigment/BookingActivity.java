@@ -182,10 +182,10 @@ public class BookingActivity extends AppCompatActivity implements DatePickerDial
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 
         HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put("id", userUid);
-        hashMap.put("service",text);
-        hashMap.put("Date",Date);
-        hashMap.put("Time",Time);
+        hashMap.put("BookingId", userUid);
+        hashMap.put("BookingService",text);
+        hashMap.put("BookingDate",Date);
+        hashMap.put("BookingTime",Time);
         reference.child("Booking").push().setValue(hashMap);
         Toast.makeText(BookingActivity.this, "Booking Successful", Toast.LENGTH_LONG).show();
     }
