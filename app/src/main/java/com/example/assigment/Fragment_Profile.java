@@ -52,7 +52,7 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener {
         username = view.findViewById(R.id.username);
         profile_image = view.findViewById(R.id.imageProfile);
 
-        /*firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
 
         reference.addValueEventListener(new ValueEventListener() {
@@ -77,7 +77,7 @@ public class Fragment_Profile extends Fragment implements View.OnClickListener {
             }
         });
 
-         */
+
         ImageButton btnMyProfile = (ImageButton) view.findViewById(R.id.btnMyProfile);
         ImageButton btnChangePasswordPage = (ImageButton) view.findViewById(R.id.btnChangePasswordPage);
         ImageButton btnHelpCenter = (ImageButton) view.findViewById(R.id.btnHelpCenter);
